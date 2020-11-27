@@ -16,6 +16,7 @@ end
 
 function [s] = rbs(M,N)
 % random binary strings with m ones of length n
+M = randi([0,M], 1, 1);
 s = false(1,N);
 s(1:M) = true; 
 s = s(randperm(numel(s)));
