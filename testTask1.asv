@@ -7,8 +7,8 @@ x = false(1,7);
 % we shall store stats in two maps
 % can't put logical as key type...
 % convert and store as int32 unless there's a better way?
-ystats = zeros(65);
-zstats = zeros(113);
+ystats = zeros(64);
+zstats = zeros(112);
 
 % ystats = containers.Map('KeyType','int32','ValueType','int32');
 % zstats = containers.Map('KeyType','int32','ValueType','int32');
