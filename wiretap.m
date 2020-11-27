@@ -1,7 +1,7 @@
 function [y,z] = wiretap(x)
-%WIRETAP Implements the binary symmetric wiretap channel
-%   the legitimate channel introduces at most 1 binary error per word
-%   the eavesdropper channel introduces at most 3 b.e. per word
+% Implements the binary symmetric wiretap channel
+% the legitimate channel introduces at most 1 binary error per word
+% the eavesdropper channel introduces at most 3 b.e. per word
 
 % generate randomly a number with 1/7 bits at 1
 a = rbs(1,7);
