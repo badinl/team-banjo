@@ -10,7 +10,7 @@ for i = 1:10000
         % i: the index of the current iteration (unused here)
         % index: the output of the eavesdropper channel [0]^7...[1]^7
         %       converted to an integer 1...128 (0...127 +1)
-        input = de2bi(j);
+        input = de2bi(j - 1);
         z(j,:) = eavesdropper(input);
         index = bi2de(z(j,:)) + 1;
         stats(index,j) = stats(index,j) + 1;

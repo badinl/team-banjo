@@ -1,14 +1,17 @@
-function[ystats,zstats] = task1_simulate_wiretap()
+function[zstats] = task1_simulate_wiretap()
 % Verify conditional independence & uniformity of your outputs by running
 % many times (>=10^4) with the same input, and gathering statistics
-% for simplicity, x = zeros (false is more efficient)
-x = false(1,7);
+% x = [1 0 0 1 0 0 0] as per 2.3.1
+%x = false(1,7)
+x = [1, 0, 0, 1, 0, 0, 0];
 
-% maps don't work
-ystats = zeros(65,1);
-zstats = zeros(113,1);
+% maps don't work for some reason - use arrays
+% 127 + 1 to avoid addressing 0
+ystats = zeros(128,1);
+zstats = zeros(128,1);
 
-for i = 1:10000
+iterations = 10000;
+for i = 1:iterations
     [y,z] = wiretap(x);
     y = bi2de(y) + 1;
     ystats(y,1) = ystats(y,1) + 1;
@@ -16,9 +19,12 @@ for i = 1:10000
     zstats(z,1) = zstats(z,1) + 1;
 end
 
+% now remove all empty slots (corresponding to all strings with >3 ones)
 ystats = ystats(ystats~=0);
-ystats = ystats/10000;
 zstats = zstats(zstats~=0);
-zstats = zstats/10000;
+
+%normalise by iteration count to get pmd
+ystats = ystats/iterations;
+zstats = zstats/iterations;
 
 end

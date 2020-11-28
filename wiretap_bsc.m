@@ -13,4 +13,3 @@ for i=1:size(x,2)
     end
 end
 end
-
