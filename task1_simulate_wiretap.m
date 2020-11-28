@@ -1,4 +1,4 @@
-function[ystats,zstats] = testTask1()
+function[ystats,zstats] = task1_simulate_wiretap()
 % Verify conditional independence & uniformity of your outputs by running
 % many times (>=10^4) with the same input, and gathering statistics
 % for simplicity, x = zeros (false is more efficient)
@@ -16,6 +16,9 @@ for i = 1:10000
     zstats(z,1) = zstats(z,1) + 1;
 end
 
-ystats = ystats(ystats~=0)
-zstats = zstats(zstats~=0)
+ystats = ystats(ystats~=0);
+ystats = ystats/10000;
+zstats = zstats(zstats~=0);
+zstats = zstats/10000;
+
 end
