@@ -14,7 +14,7 @@ for e = 1:size(epsilons,2)
         input = de2bi(mod(i,7));
         input = [zeros(1,3 - size(input,2)) input];
         
-        uprime = task6_legit(input,epsilons(e));
+        uprime = legit(input,epsilons(e));
         if bi2de(flip(input)) ~= bi2de(flip(uprime))
             fails = fails + 1;
         end        
@@ -23,3 +23,6 @@ for e = 1:size(epsilons,2)
 end
 end
 
+function [uprime] = legit(u,e)
+uprime = task5_connection(u,e,0);
+end
