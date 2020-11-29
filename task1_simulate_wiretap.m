@@ -13,9 +13,9 @@ zstats = zeros(128,1);
 iterations = 10000;
 for i = 1:iterations
     [y,z] = wiretap(x);
-    y = bi2de(y) + 1;
+    y = bi2de(flip(y)) + 1;
     ystats(y,1) = ystats(y,1) + 1;
-    z = bi2de(z) + 1;
+    z = bi2de(flip(z)) + 1;
     zstats(z,1) = zstats(z,1) + 1;
 end
 

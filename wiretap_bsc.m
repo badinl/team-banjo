@@ -4,7 +4,6 @@ y = x;
 z = x;
 
 for i=1:size(x,2)
-    r = rand();
     if rand() < e
         y(i) = not(x(i));
     end

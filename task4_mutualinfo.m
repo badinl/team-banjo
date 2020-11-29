@@ -1,7 +1,7 @@
 function [i] = task4_mutualinfo()
 % calculate mutual information
 joint = task4_simulate_Z();
-[marginal_u, marginal_z] = task4_marginals(joint);
+[marginal_u, marginal_z] = marginals(joint);
 i = 0;
 for d = 1:size(marginal_u)
     for c = 1:size(marginal_z)

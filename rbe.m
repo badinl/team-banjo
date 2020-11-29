@@ -29,7 +29,7 @@ Xprime = [
     1 1 1 1 1 1 1 ];
 
 % m becomes an index
-i = bi2de(m) + 1;
+i = bi2de(flip(m)) + 1;
 
 % uniform chance to use the complement instead
 if(randi([0,1], 1, 1) == 0)
